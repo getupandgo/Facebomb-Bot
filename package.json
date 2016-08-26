@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "node ./app.js",
+    "iso": "node ./node_modules/standard/bin/cmd.js"
   },
   "dependencies": {
+    "standard": "^8.0.0"
   }
 }
