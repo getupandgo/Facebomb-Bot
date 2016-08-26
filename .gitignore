@@ -168,3 +168,6 @@ fabric.properties
 
 ### Config files ###
 /config.json
+
+### Node-gyp build ###
+/build/
