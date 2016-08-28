@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./app.js",
+    "start": "node $NODE_DEBUG_OPTION ./app.js",
     "iso": "node ./node_modules/standard/bin/cmd.js"
   },
   "dependencies": {
