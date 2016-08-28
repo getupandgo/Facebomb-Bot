@@ -1,7 +1,8 @@
 const Botkit = require('botkit')
 const FaceBomber = require('./build/Release/FaceBomber')
 
-console.log(FaceBomber.hello())
+const obj = new FaceBomber.FaceBomberWrapper()
+obj.sayHello()
 
 const config = require('./config.json')
 

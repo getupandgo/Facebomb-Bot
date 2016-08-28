@@ -2,7 +2,11 @@
   "targets": [
     {
       "target_name": "FaceBomber",
-      "sources": [ "./FaceBomber/hello.cpp" ]
+      "sources": [
+        "./FaceBomberModule/addon.cc",
+        "./FaceBomberModule/FaceBomber/FaceBomber.cpp",
+        "./FaceBomberModule/wrapper.cc"
+      ]
     }
   ]
 }
