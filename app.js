@@ -5,6 +5,8 @@ const Botkit = require('botkit')
 const FaceBomber = require('./build/Release/FaceBomber')
 const config = require('./config.json')
 
+const imageUrlPattern = /(https?:\/\/.*\.(?:png|jpg))/gi
+
 const controller = Botkit.slackbot({
   debug: config.debug
 })
@@ -22,7 +24,7 @@ controller.hears(['hello', 'hi'], 'direct_mention,direct_message,mention', funct
 })
 
 controller.hears(['facebomb'], ['direct_mention,direct_message'], function (bot, message) {
-  let pictureUrl = message.text.match(/(https?:\/\/.*\.(?:png|jpg))/i) // TODO: why 2 matches?
+  let pictureUrl = message.text.match(imageUrlPattern)
   let response = ''
 
   if (pictureUrl && pictureUrl.length) {
@@ -46,7 +48,7 @@ controller.hears(['facebomb'], ['direct_mention,direct_message'], function (bot,
 })
 
 controller.hears(['add face to bomb'], ['direct_mention,direct_message'], function (bot, message) {
-  let faceUrl = message.text.match(/(https?:\/\/.*\.(?:png|jpg))/i) // TODO: why 2 matches?
+  let faceUrl = message.text.match(imageUrlPattern)
   let response = ''
 
   if (faceUrl && faceUrl.length) {
